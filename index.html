@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>PulseFit Gym - Modern Glassmorphism Fitness</title>
+  <meta name='description' content='PulseFit Gym delivers state‑of‑the‑art equipment, 24/7 access, dynamic classes, and expert trainers. Join the modern fitness community today.'>
+  <!-- Tailwind CSS via CDN -->
+  <script src='https://cdn.tailwindcss.com'></script>
+  <style>
+    /* Base reset for glass elements (injected by JS too) */
+    :root { --primary: #0f0f0f; --secondary: #00ff88; --accent: #ff2e63; --glass-bg: rgba(15,15,15,0.7); --glass-border: rgba(0,255,136,0.2); --gradient-1: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); --gradient-2: linear-gradient(135deg, #00ff88 0%, #00d4ff 100%); --shadow-color: rgba(255,46,99,0.4); }
+  </style>
+</head>
+<body class='bg-black text-white overflow-x-hidden'>
+  <!-- Glass Navigation -->
+  <nav class='glass-nav fixed w-full z-50 top-0 left-0 right-0 bg-opacity-60 backdrop-filter backdrop-blur-md' aria-label='Main'>
+    <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20'>
+      <a href='index.html' class='text-2xl font-bold tracking-wide'>PulseFit Gym</a>
+      <div class='hidden md:flex items-center space-x-6'>
+        <a href='index.html' class='nav-link text-sm'>Home</a>
+        <a href='about.html' class='nav-link text-sm'>Trainers</a>
+        <a href='contact.html' class='nav-link text-sm'>Contact</a>
+      </div>
+      <button id='mobile-menu-btn' class='md:hidden text-2xl'>☰</button>
+    </div>
+  </nav>
+
+  <!-- Hero Section (Gym) -->
+  <section class='relative min-h-screen flex items-center justify-center bg-cover bg-center' data-parallax style="background-image: linear-gradient(135deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.8) 100%), url('')">
+    <div class='absolute inset-0 bg-black opacity-60'></div>
+    <div class='relative z-10 text-center px-4 max-w-3xl'>
+      <h1 class='text-4xl sm:text-5xl md:text-6xl font-extrabold mb-4' data-animate='words'>PulseFit Gym</h1>
+      <p class='text-lg md:text-xl mb-6' data-animate='typewriter' data-speed='60'>State-of-the-art equipment, powerful group classes, 24/7 access, and world-class trainers.</p>
+      <div class='flex flex-wrap justify-center gap-4'>
+        <a href='contact.html' class='px-6 py-3 rounded-full glass-button text-lg font-semibold'>Join Now</a>
+        <a href='about.html' class='px-6 py-3 rounded-full glass-button text-lg font-semibold'>Meet the Trainers</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Stats / Features -->
+  <section class='py-20'>
+    <div class='max-w-7xl mx-auto px-4'>
+      <div class='grid grid-cols-1 md:grid-cols-3 gap-8'>
+        <div class='glass-card p-6'>
+          <div class='text-3xl mb-2'>🏋️</div>
+          <h3 class='text-xl font-semibold'>Premium Equipment</h3>
+          <p class='text-gray-300'>Top-tier machines, free weights, and functional areas.</p>
+        </div>
+        <div class='glass-card p-6'>
+          <div class='text-3xl mb-2'>🔥</div>
+          <h3 class='text-xl font-semibold'>Group Classes</h3>
+          <p class='text-gray-300'>HIIT, strength, cycling, yoga and more with expert coaches.</p>
+        </div>
+        <div class='glass-card p-6'>
+          <div class='text-3xl mb-2'>🕒</div>
+          <h3 class='text-xl font-semibold'>24/7 Access</h3>
+          <p class='text-gray-300'>Train on your schedule with secure access.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class='py-14 bg-gradient-to-br from-black via-gray-900 to-black'>
+    <div class='max-w-3xl mx-auto text-center px-4'>
+      <p class='text-xl text-gray-300 mb-4'>Member Spotlight</p>
+      <blockquote class='glass-card p-6'>
+        <p class='text-lg text-gray-100'>PulseFit changed my routine. The energy is unmatched and the trainers push you to your best.</p>
+        <footer class='mt-3 text-sm text-gray-400'>– Alex R.</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Footer + Scripts -->
+  <footer class='py-6 text-center text-sm text-gray-400'>© 2025 PulseFit Gym — All rights reserved</footer>
+
+  <script>
+    // Gym color palette application (no questions mode)
+    function applyGymPalette(){
+      const r = document.documentElement;
+      r.style.setProperty('--primary', '#0f0f0f');
+      r.style.setProperty('--secondary', '#00ff88');
+      r.style.setProperty('--accent', '#ff2e63');
+      r.style.setProperty('--glass-bg', 'rgba(15,15,15,0.7)');
+      r.style.setProperty('--glass-border', 'rgba(0,255,136,0.2)');
+      r.style.setProperty('--gradient-1', 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)');
+      r.style.setProperty('--gradient-2', 'linear-gradient(135deg, #00ff88 0%, #00d4ff 100%)');
+      r.style.setProperty('--shadow-color', 'rgba(255,46,99,0.4)');
+    }
+
+    // Glassmorphism generator
+    function initGlassmorphism(){
+      const s = document.createElement('style');
+      s.id = 'glassmorphism-styles';
+      s.textContent = `
+        .glass { background: var(--glass-bg); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border:1px solid var(--glass-border); box-shadow: 0 8px 32px rgba(0,0,0,0.37); }
+        .glass-card { background: var(--glass-bg); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border:1px solid var(--glass-border); border-radius:12px; padding:14px; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .glass-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.5); border-color: var(--accent); }
+        .glass-nav { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-bottom: 1px solid var(--glass-border); }
+        .glass-button { background: var(--glass-bg); border:1px solid var(--glass-border); transition: all 0.3s ease; }
+        .glass-button:hover { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 20px var(--accent); color: #fff; }
+      `; 
+      document.head.appendChild(s);
+    }
+
+    // Particle background
+    function initParticles(){
+      const canvas = document.createElement('canvas');
+      canvas.id = 'particles-canvas';
+      canvas.style.cssText = 'position: fixed; top:0; left:0; width:100%; height:100%; z-index:-1; pointer-events:none;';
+      document.body.prepend(canvas);
+      const ctx = canvas.getContext('2d');
+      function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+      window.addEventListener('resize', resize); resize();
+      const N = 90; const pts = [];
+      for(let i=0;i<N;i++){ pts.push({ x: Math.random()*canvas.width, y: Math.random()*canvas.height, s: Math.random()*2+1, vx: Math.random()*0.6-0.3, vy: Math.random()*0.6-0.3, a: Math.random()*0.6+0.2 }); }
+      function loop(){
+        ctx.clearRect(0,0,canvas.width, canvas.height);
+        for(const p of pts){ p.x += p.vx; p.y += p.vy; if(p.x>canvas.width) p.x = 0; if(p.x<0) p.x = canvas.width; if(p.y>canvas.height) p.y = 0; if(p.y<0) p.y = canvas.height; ctx.fillStyle = 'rgba(255,255,255,'+p.a+')'; ctx.beginPath(); ctx.arc(p.x,p.y,p.s,0,Math.PI*2); ctx.fill(); }
+        for(let i=0;i<pts.length;i++){ for(let j=i+1;j<pts.length;j++){ const dx = pts[i].x-pts[j].x; const dy = pts[i].y-pts[j].y; const d = Math.sqrt(dx*dx+dy*dy); if(d<120){ ctx.strokeStyle = 'rgba(255,255,255,'+(0.1*(1-d/120))+')'; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(pts[i].x, pts[i].y); ctx.lineTo(pts[j].x, pts[j].y); ctx.stroke(); } } }
+        requestAnimationFrame(loop);
+      }
+      loop();
+    }
+
+    // Custom cursor
+    function initCustomCursor(){
+      const s = document.createElement('style'); s.textContent = `
+        * { cursor: none !important; }
+        .cursor-dot { width:8px; height:8px; background: var(--accent); border-radius:50%; position: fixed; pointer-events:none; z-index:9999; transform: translate(-50%, -50%); }
+        .cursor-outline { width:40px; height:40px; border:2px solid var(--accent); border-radius:50%; position: fixed; pointer-events:none; z-index:9998; transform: translate(-50%, -50%); }
+        .cursor-outline.expand { transform: translate(-50%, -50%) scale(1.5); background: rgba(255,255,255,0.15); }
+      `; document.head.appendChild(s);
+      const dot = document.createElement('div'); dot.className = 'cursor-dot'; document.body.appendChild(dot);
+      const outline = document.createElement('div'); outline.className = 'cursor-outline'; document.body.appendChild(outline);
+      let mx=0, my=0, ox=0, oy=0;
+      document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; dot.style.left = mx+'px'; dot.style.top = my+'px'; });
+      function animate(){ ox += (mx-ox)*0.15; oy += (my-oy)*0.15; outline.style.left = ox+'px'; outline.style.top = oy+'px'; requestAnimationFrame(animate); }
+      animate();
+      document.querySelectorAll('a, button, .magnetic').forEach(el => {
+        el.addEventListener('mouseenter', ()=> outline.classList.add('expand'));
+        el.addEventListener('mouseleave', ()=> outline.classList.remove('expand'));
+      });
+    }
+
+    // Dark mode toggle
+    function initDarkMode(){
+      const btn = document.createElement('button'); btn.id = 'dark-mode-toggle'; btn.textContent = '🌙';
+      btn.style.cssText = 'position: fixed; right: 1rem; bottom: 1rem; width:54px; height:54px; border-radius:999px; border:1px solid rgba(255,255,255,0.4); background: rgba(0,0,0,0.4); color:white; z-index: 9999;';
+      document.body.appendChild(btn);
+      const css = document.createElement('style'); css.textContent = `* { transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease; } body.dark-mode { background:#0a0a0a; color:#fff; } body.light-mode { background:#fff; color:#000; }`;
+      document.head.appendChild(css);
+      const saved = localStorage.getItem('darkMode');
+      if(saved==='dark' || (!saved && window.matchMedia('(prefers-color-scheme: dark)').matches)){
+        document.body.classList.add('dark-mode'); btn.textContent = '☀️';
+      } else { document.body.classList.add('light-mode'); btn.textContent = '🌙'; }
+      btn.addEventListener('click', ()=>{
+        document.body.classList.toggle('dark-mode'); document.body.classList.toggle('light-mode');
+        const isDark = document.body.classList.contains('dark-mode'); btn.textContent = isDark ? '☀️' : '🌙';
+        localStorage.setItem('darkMode', isDark ? 'dark' : 'light');
+      });
+    }
+
+    // Magnetic elements
+    function initMagneticElements(){
+      document.querySelectorAll('.magnetic, button, .card').forEach(el => {
+        el.classList.add('magnetic');
+        el.addEventListener('mousemove', e => {
+          const r = el.getBoundingClientRect(); const x = e.clientX - r.left - r.width/2; const y = e.clientY - r.top - r.height/2; const dx = x * 0.3; const dy = y * 0.3; el.style.transform = 'translate('+dx+'px,'+dy+'px)';
+        });
+        el.addEventListener('mouseleave', ()=>{ el.style.transform = 'translate(0,0)'; });
+      });
+    }
+
+    // Ripple on click
+    function initRippleEffect(){
+      document.querySelectorAll('button, .btn, .ripple-container').forEach(b => {
+        if(!b.classList.contains('ripple-container')) b.classList.add('ripple-container');
+        b.addEventListener('click', e => {
+          const r = b.getBoundingClientRect(); const size = Math.max(r.width, r.height);
+          const ripple = document.createElement('span'); ripple.className = 'ripple';
+          ripple.style.position = 'absolute'; ripple.style.width = ripple.style.height = size+'px'; ripple.style.left = (e.clientX - r.left - size/2)+'px'; ripple.style.top = (e.clientY - r.top - size/2)+'px'; ripple.style.borderRadius = '50%'; ripple.style.background = 'rgba(255,255,255,0.6)'; ripple.style.transform = 'scale(0)'; ripple.style.animation = 'ripple 0.6s ease-out forwards'; b.appendChild(ripple);
+          ripple.addEventListener('animationend', ()=> ripple.remove());
+        });
+      });
+      const s = document.createElement('style'); s.textContent = `@keyframes ripple { to { transform: scale(4); opacity:0; } }`; document.head.appendChild(s);
+    }
+
+    // Card tilt
+    function initCardTilt(){
+      document.querySelectorAll('.glass-card, .card, [data-tilt]').forEach(card => {
+        card.classList.add('tilt-card');
+        card.addEventListener('mousemove', e => {
+          const r = card.getBoundingClientRect(); const x = e.clientX - r.left; const y = e.clientY - r.top; const rx = (y - r.height/2)/10; const ry = (r.width/2 - x)/10; card.style.transform = 'perspective(1000px) rotateX('+rx+'deg) rotateY('+ry+'deg)'; });
+        card.addEventListener('mouseleave', ()=>{ card.style.transform = 'none'; });
+      });
+    }
+
+    // Word reveal
+    function animateWords(){ document.querySelectorAll('[data-animate="words"]').forEach((el)=>{ const text = el.textContent.trim(); const words = text.split(' '); el.textContent = ''; words.forEach((w,i)=>{ const s = document.createElement('span'); s.textContent = w; s.style.opacity = '0'; s.style.display = 'inline-block'; s.style.transition = 'opacity 0.6s ease'; el.appendChild(s); if(i<words.length-1) el.appendChild(document.createTextNode(' ')); setTimeout(()=>{ s.style.opacity = '1'; }, 60*i); }); }); }
+
+    // Typewriter
+    function animateTypewriter(){ document.querySelectorAll('[data-animate="typewriter"]').forEach(el => { const text = el.textContent.trim(); const speed = parseInt(el.dataset.speed) || 60; el.textContent = ''; const cursor = document.createElement('span'); cursor.textContent = '|'; el.appendChild(cursor); let i=0; const t = setInterval(()=>{ if(i<text.length){ cursor.before(document.createTextNode(text.charAt(i))); i++; } else { clearInterval(t); cursor.remove(); } }, speed); }); }
+
+    // Gradient text
+    function animateGradient(){ document.querySelectorAll('[data-animate="gradient"]').forEach(el => { el.style.background = 'linear-gradient(90deg, var(--accent), var(--secondary), var(--accent))'; el.style.backgroundSize = '200%'; el.style.webkitBackgroundClip = 'text'; el.style.backgroundClip = 'text'; el.style.color = 'transparent'; el.style.animation = 'gradientShift 3s ease infinite'; }); if(!document.getElementById('gradient-animation')){ const style = document.createElement('style'); style.id = 'gradient-animation'; style.textContent = '@keyframes gradientShift { 0%,100%{background-position:0%} 50%{background-position:100%} }'; document.head.appendChild(style); } }
+
+    // Split hover
+    function animateSplitHover(){ document.querySelectorAll('[data-animate="split-hover"]').forEach(el => { const text = el.textContent.trim(); el.textContent = ''; text.split('').forEach(ch => { const span = document.createElement('span'); span.textContent = ch === ' ' ? ' ' : ch; span.style.display = 'inline-block'; span.style.transition = 'transform 0.3s'; el.appendChild(span); span.addEventListener('mouseenter', ()=>{ span.style.transform = 'translateY(-6px) scale(1.3)'; span.style.color = 'var(--accent)'; span.style.textShadow = '0 0 20px currentColor'; }); span.addEventListener('mouseleave', ()=>{ span.style.transform = 'translateY(0) scale(1)'; span.style.color = ''; span.style.textShadow = ''; }); }); }); }
+
+    // Scroll reveals
+    function initScrollAnimations(){ const items = document.querySelectorAll('[data-scroll-animate]'); items.forEach(i=> i.style.opacity = '0'); const obs = new IntersectionObserver((entries)=>{ entries.forEach(e => { if(e.isIntersecting){ e.target.style.opacity = '1'; e.target.style.transition = 'opacity 0.6s ease, transform 0.6s ease'; e.target.style.transform = 'translateY(0)'; obs.unobserve(e.target); } }); }, { threshold: 0.1 }); items.forEach(it => obs.observe(it)); }
+
+    // Master init
+    function initAll(){ applyGymPalette(); initGlassmorphism(); initParticles(); initCustomCursor(); initDarkMode(); initMagneticElements(); initRippleEffect(); initCardTilt(); animateWords(); animateTypewriter(); animateGradient(); animateSplitHover(); initScrollAnimations(); // smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(a => { a.addEventListener('click', ev => { const id = a.getAttribute('href'); if(id && id.length>1){ const el = document.querySelector(id); if(el){ ev.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); } } }); });
+      // parallax hero
+      const hero = document.querySelector('[data-parallax]'); if(hero){ window.addEventListener('scroll', ()=>{ const s = window.pageYOffset; hero.style.transform = 'translateY('+(s*0.3)+'px)'; }); }
+      // run loader removal once page fully loads
+      window.addEventListener('load', ()=> { const l = document.getElementById('loading-screen'); if(l){ l.style.opacity = '0'; l.style.transition = 'opacity 0.5s ease'; setTimeout(()=> l.remove(), 500); } });
+    }
+
+    document.addEventListener('DOMContentLoaded', initAll);
+  </script>
+
+  <!-- Minimal loading screen -->
+  <div id='loading-screen' class='fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-br from-purple-900 via-blue-900 to-black'>
+    <div class='text-center'>
+      <div class='w-20 h-20 mx-auto mb-6 relative'>
+        <div class='spinner-ring' style='border: 4px solid transparent; border-top-color: white; border-radius: 50%; width: 100%; height: 100%; animation: spin 1s linear infinite;'></div>
+      </div>
+      <p class='text-white text-xl font-light tracking-widest'>Loading</p>
+    </div>
+  </div>
+  <style>
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</body>
+</html>
