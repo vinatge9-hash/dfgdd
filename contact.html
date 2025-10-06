@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>PulseFit Gym — Contact</title>
+  <meta name='description' content='Get in touch with PulseFit Gym for memberships, classes, and events.'>
+  <script src='https://cdn.tailwindcss.com'></script>
+</head>
+<body class='bg-black text-white'>
+  <!-- Glass Nav -->
+  <nav class='glass-nav fixed w-full z-50 top-0 left-0 right-0 bg-opacity-60 backdrop-filter backdrop-blur-md'>
+    <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20'>
+      <a href='index.html' class='text-2xl font-bold'>PulseFit Gym</a>
+      <div class='hidden md:flex space-x-6'>
+        <a href='index.html' class='text-sm'>Home</a>
+        <a href='about.html' class='text-sm'>Trainers</a>
+        <a href='contact.html' class='text-sm'>Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contact Form -->
+  <main class='pt-28 pb-20'>
+    <section class='max-w-4xl mx-auto px-4'>
+      <h1 class='text-3xl md:text-4xl font-bold mb-6'>Get in Touch</h1>
+      <p class='text-gray-300 mb-6'>Have questions about memberships, classes, or scheduling a trainer session? Send us a message and we’ll get back to you promptly.</p>
+      <form class='bg-gray-900/50 glass p-6 rounded-md' onsubmit='return false'>
+        <div class='grid grid-cols-1 md:grid-cols-2 gap-4'>
+          <input class='bg-transparent border border-gray-700 rounded px-4 py-2 text-white' placeholder='Your Name' required>
+          <input class='bg-transparent border border-gray-700 rounded px-4 py-2 text-white' placeholder='Email' type='email' required>
+        </div>
+        <div class='mt-4'>
+          <textarea class='w-full bg-transparent border border-gray-700 rounded p-4 text-white h-28' placeholder='Your Message' required></textarea>
+        </div>
+        <div class='mt-4'>
+          <button class='px-6 py-3 rounded glass-button'>Send Message</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class='py-6 text-center text-sm text-gray-400'>© 2025 PulseFit Gym</footer>
+
+  <script>
+    function applyGymPalette(){ const r=document.documentElement; r.style.setProperty('--primary','#0f0f0f'); r.style.setProperty('--secondary','#00ff88'); r.style.setProperty('--accent','#ff2e63'); }
+    function initGlassmorphism(){ const s=document.createElement('style'); s.id='glassmorphism-styles'; s.textContent='.glass{background:var(--glass-bg);backdrop-filter: blur(10px);-webkit-backdrop-filter: blur(10px);border:1px solid var(--glass-border);border-radius:12px;}'; document.head.appendChild(s); }
+    function initAll(){ applyGymPalette(); initGlassmorphism(); }
+    document.addEventListener('DOMContentLoaded', initAll);
+  </script>
+</body>
+</html>
